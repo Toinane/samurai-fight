@@ -1,9 +1,11 @@
 import {BrowserWindow, BrowserWindowConstructorOptions} from 'electron';
+import LanConnection from './LanConnection';
 
 export default class GameView {
   protected window?: BrowserWindow
 
   protected view: string
+  protected connection: LanConnection
 
   protected windowParams: BrowserWindowConstructorOptions = {
     minWidth: 440,
@@ -11,8 +13,8 @@ export default class GameView {
     icon: `${__dirname}/logo.png`
   }
 
-  constructor (view: string) {
-    this.view = view
+  constructor () {
+    this.view = 'game';
   }
 
   public createWindow (): BrowserWindow {
@@ -21,7 +23,9 @@ export default class GameView {
     this.window = new BrowserWindow(this.windowParams)
     this.window.loadURL(`file://${__dirname}/${this.view}.html`)
     this.window.on('closed', this.closeWindow)
-
+    
+    this.connection = new LanConnection();
+    
     // this.initWindowEvents()
     // this.initEvents()
     return this.window

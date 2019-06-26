@@ -1,9 +1,5 @@
 "use strict";
 exports.__esModule = true;
-var Game = /** @class */ (function () {
-    function Game() {
-    }
-    return Game;
-}());
-exports["default"] = Game;
+var GameApp_1 = require("./GameApp");
+var application = new GameApp_1["default"]();
 //# sourceMappingURL=main.js.map

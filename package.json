@@ -12,8 +12,12 @@
     "start": "npm run build && electron ./dist/main/main.js"
   },
   "devDependencies": {
-    "electron": "^5.0.4",
+    "electron": "^5.0.5",
     "tslint": "^5.17.0",
     "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "socket.io": "^2.2.0"
   }
 }
