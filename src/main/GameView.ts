@@ -14,7 +14,7 @@ export default class GameView {
   }
 
   constructor () {
-    this.view = 'game';
+    this.view = 'game'
   }
 
   public createWindow (): BrowserWindow {
@@ -24,7 +24,7 @@ export default class GameView {
     this.window.loadURL(`file://${__dirname}/${this.view}.html`)
     this.window.on('closed', this.closeWindow)
     
-    this.connection = new LanConnection();
+    this.connection = new LanConnection()
     
     // this.initWindowEvents()
     // this.initEvents()

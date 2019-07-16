@@ -1,9 +1,13 @@
 const dgram = require("dgram"); 
 
 export default class LanConnection {
+
+    date: Date
+
     constructor() {
         this.makeAParty();
         this.searchForAParty();
+        this.date = new Date();
     }
 
     private searchForAParty() {
@@ -25,7 +29,7 @@ export default class LanConnection {
         });
 
         const broadcastGame = () => {
-            let message = new Buffer("Partie de Toinane");
+            let message = new Buffer("Partie du " + this.date.toString());
             server.send(message, 0, message.length, 2743, "255.255.255.255");
         };
     }
